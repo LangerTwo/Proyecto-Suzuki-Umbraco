@@ -7,11 +7,31 @@
   if(row.FeatureItems == null || !row.FeatureItems.Any()) return;
 }
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container gx-4 gx-lg-5 mt-3">
+
+  <div class="d-flex justify-content-between">
+
+    @foreach(var item in row.FeatureItems) {
+       var rowItem = (ImageLinkItem)item.Content;
+        var rowSettings = (ImageLinkItemSettings)item.Settings;
+        if(rowSettings.Hide) continue;
+
+      <div class="border border-0 card col-md-3 col-sm-12 me-2">
+        @if(rowItem.Image != null){
+          <img src="@rowItem.Image.Url()" class="card-img-top align-self-center" alt="@rowItem.Image.Name" style="height: 130px; width: 130px">
+        }
+        <div class="card-body text-center">
+          @if(!string.IsNullOrWhiteSpace(rowItem.Title)) {
+            <h5 class="card-title">@rowItem.Title</h5>
+          }
+          @if(!string.IsNullOrWhiteSpace(rowItem.Description)){
+            <p class="card-text">@rowItem.Description</p>
+          }
+          @if(rowItem.Link != null){
+            <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="link-body-emphasis fw-bold text-decoration-underline">@rowItem.Link.Name</a>
+          }
+        </div>
+      </div>
+    }
   </div>
 </div>
