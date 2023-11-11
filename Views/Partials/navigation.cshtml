@@ -5,10 +5,10 @@
     var navigationItems = homePage.MainNavigation;
 }
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-white shadow sticky-top">
   <div class="container-fluid row">
     <div class="col-6">
-      <a class="navbar-brand" href="#"><img src="@homePage.ImageLogo.Url()" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="@homePage.ImageLogo.Url()" alt="@homePage.ImageLogo.Name"></a>
     </div>
 
       <button class="navbar-toggler col-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,26 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @if(navigationItems != null && navigationItems.Any()){
             foreach(var item in navigationItems){
-              <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="@homePage.Url()">@item.Title</a></li>
+
+              var hasChildLinks = item.ChildLink != null && item.ChildLink.Any();
+              if(hasChildLinks) {
+                <li class="nav-item dropdown">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    @item.Title
+                  </a>
+                  <ul class="dropdown-menu border-0" aria-labelledby="@item.Key">
+                    @foreach(var childLink in item.ChildLink) {
+                      <li>
+                          <a class="dropdown-item" href="@childLink.Url" target="@childLink.Target">@childLink.Name</a>
+                      </li>
+                    }
+                  </ul>
+                </li>
+              } else {
+                <li class="nav-item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="@homePage.Url()">@item.Title</a>
+                </li>
+              }
             }
         }
       </ul>
