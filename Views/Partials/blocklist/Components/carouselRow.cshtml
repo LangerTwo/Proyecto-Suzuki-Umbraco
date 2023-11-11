@@ -9,7 +9,7 @@
 }
 
 
-<div id="@carouselId" class="carousel slide container-fliud">
+<div id="@carouselId" class="carousel slide container-fliud" data-bs-ride="carousel">
   <div class="carousel-indicators">
     @if(settings?.ShowIndicators ?? false){
         
@@ -40,14 +40,16 @@
                 @if(rowItem != null){
                     <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name"  style="height: 650px;">                   
                 }
-                <div class="carousel-caption d-none d-md-block">
-                    @if(hasTitle){
-                        <h5>@rowItem.Title</h5>
-                    }
-                </div>
+                @if(hasTitle) {
+                    <div class="carousel-caption d-none d-md-block">
+                        @if(hasTitle){
+                            <h5>@rowItem.Title</h5>
+                        }
+                    </div>
+                }
             </div>
+            itemIndex++;
         }
-        itemIndex++;
     }
   </div>
 
