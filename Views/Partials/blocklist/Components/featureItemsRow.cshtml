@@ -8,9 +8,9 @@
 }
 
 <div class="container gx-4 gx-lg-5 mt-3">
+    <h2>@row.Title</h2>
 
   <div class="d-flex justify-content-between">
-
     @foreach(var item in row.FeatureItems) {
        var rowItem = (ImageLinkItem)item.Content;
         var rowSettings = (ImageLinkItemSettings)item.Settings;

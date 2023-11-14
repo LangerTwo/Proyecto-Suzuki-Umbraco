@@ -1,0 +1,30 @@
+#prueba:hover{
+  color: #C60C3E;;
+}
+
+.position-link{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: auto;
+  bottom: 10%;
+}
+
+#submenu {
+  top: 123%;
+  padding: 16px 8px;
+  /* width: 100%;
+  max-width: 120px; */
+}
+
+.beta:hover{
+  transform: scale(1.3);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.beta img{
+  transition: 0.4s;
+  width: 95%;
+  filter:brightness(74%);
+}
