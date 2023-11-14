@@ -8,8 +8,8 @@
     var carouselId = "carousel" + row.Key;
 }
 
-
-<div id="@carouselId" class="carousel slide container-fliud mt-2" data-bs-ride="carousel">
+@* data-bs-ride="carousel" *@
+<div id="@carouselId" class="carousel slide container-fliud mt-2" >
   <div class="carousel-indicators">
     @if(settings?.ShowIndicators ?? false){
         
@@ -24,7 +24,7 @@
   </div>
 
 
-  <div class="carousel-inner ">
+  <div class="carousel-inner position-relative">
     @{
         var itemIndex = 0;
 
@@ -40,14 +40,19 @@
                 @if(rowItem != null){
                     <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name"  style="height: 650px;">                   
                 }
-                @if(hasTitle) {
-                    <div class="carousel-caption d-none d-md-block">
-                        @if(hasTitle){
-                            <h5>@rowItem.Title</h5>
-                        }
+            </div>
+             @if(hasTitle) {
+                    <div class="text-white gamma">
+                        <p class="fs-1 mb-2">@rowItem.Title</p>
+                        <div class="barra"></div>
+                        <p class="mt-2">@rowItem.Description</p>
+                        <div>
+                            @foreach(var itemLink in item.linkItems){
+                                @* <a>@itemLink.Name</a> *@
+                            }
+                        </div>
                     </div>
                 }
-            </div>
             itemIndex++;
         }
     }

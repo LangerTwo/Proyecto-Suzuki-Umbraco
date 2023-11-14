@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Carousel Item</summary>
 	[PublishedModel("carouselItem")]
-	public partial class CarouselItem : PublishedElementModel, IImageProperty, ITitleProperty
+	public partial class CarouselItem : PublishedElementModel, IDescriptionProperty, IImageProperty, ITitleProperty
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -48,6 +48,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Link Items
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("linkItems")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> LinkItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "linkItems");
+
+		///<summary>
+		/// Description: Enter the description for this item
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("description")]
+		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.DescriptionProperty.GetDescription(this, _publishedValueFallback);
 
 		///<summary>
 		/// Image: Choose the image for this item
