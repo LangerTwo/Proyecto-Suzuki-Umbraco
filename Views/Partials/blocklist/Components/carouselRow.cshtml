@@ -8,8 +8,7 @@
     var carouselId = "carousel" + row.Key;
 }
 
-@* data-bs-ride="carousel" *@
-<div id="@carouselId" class="carousel slide container-fliud mt-2" >
+<div id="@carouselId" class="carousel slide container-fliud mt-2" data-bs-ride="carousel">
   <div class="carousel-indicators">
     @if(settings?.ShowIndicators ?? false){
         
@@ -43,12 +42,12 @@
             </div>
              @if(hasTitle) {
                     <div class="text-white gamma">
-                        <p class="fs-1 mb-2">@rowItem.Title</p>
+                        <p class="fs-1 mb-2 w-75 fw-bold lh-sm">@rowItem.Title</p>
                         <div class="barra"></div>
                         <p class="mt-2">@rowItem.Description</p>
-                        <div>
-                            @foreach(var itemLink in item.linkItems){
-                                @* <a>@itemLink.Name</a> *@
+                        <div id="buttonBanner" class="d-flex flex-column mb-3">
+                            @foreach(var itemLink in rowItem.LinkItems){
+                                <a id="pruebaBtn" class="text-center btn mb-3 w-75">@itemLink.Name</a>
                             }
                         </div>
                     </div>

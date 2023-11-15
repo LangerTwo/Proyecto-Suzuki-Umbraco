@@ -33,7 +33,7 @@
   position: absolute;
   top: 10%;
   bottom: auto;
-  width: 25%;
+  width: 40%;
   left: 3%;
 }
 
@@ -42,4 +42,21 @@
   border-radius: 8px;
   height: 1px;
   transform: translateX(-5px);
+}
+
+#buttonBanner #pruebaBtn:nth-child(1){
+  color: #ffffff;
+  background-color: #C60C3E;
+  border: 1px solid #ffffff;
+}
+
+#buttonBanner #pruebaBtn:nth-child(2){
+  color: #C60C3E;
+  background-color: #ffffff;
+  border: 1px solid #C60C3E;       
+}
+
+.omega{
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 }
