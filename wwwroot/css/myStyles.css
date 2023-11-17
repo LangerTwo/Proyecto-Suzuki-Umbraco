@@ -104,3 +104,40 @@
   font-weight: bold;
   /* align-items: end; */
 }
+
+#globo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(228, 100, 10);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1080;
+  margin-right: 2%;
+  margin-bottom: 4%;
+}
+
+#globo button {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 4%;
+}
+
+#globo button img {
+  width: 100px;
+  height: 100px;
+}
+
+#globo button #num-globo {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  background: #C60C3E;
+  border-radius: 20px;
+  color: white;
+}
