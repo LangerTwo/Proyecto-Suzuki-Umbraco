@@ -3,6 +3,7 @@
 @{
     var homePage = Model.AncestorOrSelf<HomePage>();
     var footerItem = homePage.FooterItemsContent;
+    var navigationItems = homePage.MainNavigation;
 }
 
 <div id="footer" class="container-fluid mt-5">
@@ -24,22 +25,46 @@
         }
 
     </div>
-   <ul class="row justify-content-between mb-0" style="border-bottom: 1px solid #dfe2e7;">   
-        @foreach(var item in footerItem){
-            var itemFooter = (FooterItems)item.Content;
-            
-            <li class="col-4 col-lg-2 fw-bold" style="max-width: 186px;">
-                @itemFooter.Title
-                <ul class="lista-footer">
-                    @foreach(var listFooter in itemFooter.FooterList){
-                        <li>
-                            <a href="" class="fs-6 fw-bold">@listFooter.Name</a>
+    <div class="container">
+
+        <ul class="row justify-content-between mb-0" style="border-bottom: 1px solid #dfe2e7;">   
+
+            @if(navigationItems != null && navigationItems.Any()){  
+
+                foreach(var itemNav in navigationItems){
+                    var hasChildLinks = itemNav.ChildLink != null && itemNav.ChildLink.Any();
+                    var hasTitle = itemNav.Title != null && itemNav.Title.Any();
+
+                    if(hasTitle && hasChildLinks){
+                        <li class="col-4 col-lg-2 fw-bold" style="max-width: 186px;">
+                            @itemNav.Title
+                            <ul class="lista-footer">
+                                @foreach(var childLink in itemNav.ChildLink) {
+                                    <li>
+                                        <a href="" class="fs-6 fw-bold">@childLink.Name</a>
+                                    </li>
+                                }
+                            </ul>
                         </li>
-                    }
-                </ul>
-            </li> 
-        }
-    </ul>
+                    } 
+                }
+                @foreach(var item in footerItem){
+                    var itemFooter = (FooterItems)item.Content;
+                    
+                    <li class="col-4 col-lg-2 fw-bold" style="max-width: 186px;">
+                        @itemFooter.Title
+                        <ul class="lista-footer">
+                            @foreach(var listFooter in itemFooter.FooterList){
+                                <li>
+                                    <a href="" class="fs-6 fw-bold">@listFooter.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </li> 
+                }   
+            }        
+        </ul>
+    </div>
     <div id="footer-sup" class="d-flex justify-content-evenly">
         <p>@homePage.TextoUno</p>
         <p class="text-end" style="width: 541px;">&copy;@DateTime.Now.Year @homePage.TextoDos</p>
