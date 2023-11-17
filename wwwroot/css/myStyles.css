@@ -56,7 +56,51 @@
   border: 1px solid #C60C3E;       
 }
 
+#delta p {
+  text-align: center;
+  font-weight: bold;
+}
+
+#delta iframe {
+  /* width: 1000px; */
+  height: 500px;
+}
+
 .omega{
   overflow-x: scroll;
   scroll-behavior: smooth;
+}
+
+#footer{
+  background-color: #f6f6f6;
+}
+
+#footer ul{
+  list-style: none;
+  text-align: left;
+  color: #666666;
+  padding: 0;
+}
+
+#footer ul li ul{
+  padding: 0;
+}
+
+#footer .lista-footer{
+  max-width: 186px;
+}
+
+#footer .lista-footer li{
+  margin: 14px 0;
+}
+
+#footer .lista-footer li a{
+  color: #666666;
+}
+
+#footer #footer-sup p {
+  margin: 15px 0 24px;
+  font-size: 13px;
+  font-weight: bold;
+  /* align-items: end; */
 }

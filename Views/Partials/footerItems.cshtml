@@ -1,0 +1,47 @@
+@inherits UmbracoViewPage
+
+@{
+    var homePage = Model.AncestorOrSelf<HomePage>();
+    var footerItem = homePage.FooterItemsContent;
+}
+
+<div id="footer" class="container-fluid mt-5">
+    <div class="d-flex justify-content-end align-items-center">
+        <p class="fw-bold">@homePage.Titulo</p>
+        @if(homePage.FooterSocialLinks !=null){
+            <ul class="list-inline text-end">
+                @foreach(var socialLinks in homePage.FooterSocialLinks){
+                    <li class="list-inline-item">
+                        <a href="@socialLinks.Url">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-@socialLinks.Network fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+
+    </div>
+   <ul class="row justify-content-between mb-0" style="border-bottom: 1px solid #dfe2e7;">   
+        @foreach(var item in footerItem){
+            var itemFooter = (FooterItems)item.Content;
+            
+            <li class="col-4 col-lg-2 fw-bold" style="max-width: 186px;">
+                @itemFooter.Title
+                <ul class="lista-footer">
+                    @foreach(var listFooter in itemFooter.FooterList){
+                        <li>
+                            <a href="" class="fs-6 fw-bold">@listFooter.Name</a>
+                        </li>
+                    }
+                </ul>
+            </li> 
+        }
+    </ul>
+    <div id="footer-sup" class="d-flex justify-content-evenly">
+        <p>@homePage.TextoUno</p>
+        <p class="text-end" style="width: 541px;">&copy;@DateTime.Now.Year @homePage.TextoDos</p>
+    </div>
+</div>

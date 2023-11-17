@@ -1,0 +1,17 @@
+@* @inherits UmbracoViewPage<BlockListItem> *@
+
+@{
+  var row = (VideoRow)Model.Content;
+  var settings = (VideoRowSettings)Model.Settings;
+  if(settings?.Hide ?? false) {return;}
+}
+
+<div id="delta" class="container-fluid">
+    <div>
+        <p class="mb-0 fs-2">@row.Title</p>
+        <p class="mt-0 fs-4">@row.Description</p>
+    </div>
+    <div class="container">
+        <iframe class=" w-100" src="@row.Link.Url" frameborder="0" alt="@row.Link.Name"></iframe>
+    </div>
+</div>

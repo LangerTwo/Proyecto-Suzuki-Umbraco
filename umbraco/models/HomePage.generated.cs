@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IContentProperties, ISiteNavigationsProperties, IVisibilityProperties
+	public partial class HomePage : PublishedContentModel, IContentProperties, IFooterProperties, ISiteNavigationsProperties, IVisibilityProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -72,6 +72,46 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainContent")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetMainContent(this, _publishedValueFallback);
+
+		///<summary>
+		/// Footer Items Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerItemsContent")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel FooterItemsContent => global::Umbraco.Cms.Web.Common.PublishedModels.FooterProperties.GetFooterItemsContent(this, _publishedValueFallback);
+
+		///<summary>
+		/// Footer Social Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerSocialLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> FooterSocialLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterProperties.GetFooterSocialLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// TextoDos
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("textoDos")]
+		public virtual string TextoDos => global::Umbraco.Cms.Web.Common.PublishedModels.FooterProperties.GetTextoDos(this, _publishedValueFallback);
+
+		///<summary>
+		/// TextoUno
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("textoUno")]
+		public virtual string TextoUno => global::Umbraco.Cms.Web.Common.PublishedModels.FooterProperties.GetTextoUno(this, _publishedValueFallback);
+
+		///<summary>
+		/// titulo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("titulo")]
+		public virtual string Titulo => global::Umbraco.Cms.Web.Common.PublishedModels.FooterProperties.GetTitulo(this, _publishedValueFallback);
 
 		///<summary>
 		/// Main Navigation: Add the links for the main navigation
