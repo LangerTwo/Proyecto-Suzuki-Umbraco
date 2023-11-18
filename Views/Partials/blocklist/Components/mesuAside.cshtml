@@ -1,0 +1,25 @@
+@* @inherits UmbracoViewPage<BlockListItem> *@
+
+@{
+  var row = (MesuAside)Model.Content;
+  var settings = (MenuAsideSettings)Model.Settings;
+  if(settings?.Hide ?? false) {return;}
+  if(row.MenuAsideItems == null || !row.MenuAsideItems.Any()) return;
+}
+
+<div id="eta">
+    <div id="menu-aside">
+       <p>@row.Title</p>
+    </div>
+
+    <ul id="list-aside">
+        @foreach(var itemMenu in row.MenuAsideItems)
+        {
+            var rowItem = (ImageLinkItem)itemMenu.Content;
+            <li class="d-flex flex-column align-items-center">
+                <img src="@rowItem.Image.Url()" alt="@rowItem.Image.Name">
+                <span>@rowItem.Title</span>
+            </li>
+        }
+    </ul>
+</div>
