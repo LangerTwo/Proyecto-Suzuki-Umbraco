@@ -8,7 +8,7 @@
     var carouselId = "carousel" + row.Key;
 }
 
-<div id="@carouselId" class="carousel slide container-fliud mt-2" data-bs-ride="carousel">
+@* <div id="@carouselId" class="carousel slide container-fliud mt-2" data-bs-ride="carousel">
   <div class="carousel-indicators">
     @if(settings?.ShowIndicators ?? false){
         
@@ -67,4 +67,55 @@
             <span class="visually-hidden">Next</span>
         </button>
     }
+</div> *@
+
+<!-- Slider main container -->
+<div class="swiper swiper-hero">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+        <!-- Slides -->
+            @foreach(var item in row.CarouselItems)
+            {
+                var rowItem = (CarouselItem)item.Content;
+                var rowSettings = (CarouselItemSettings)item.Settings;
+                if(rowSettings.Hide) continue;
+
+                @* var isFirstSlide = itemIndex == 0; *@
+                var hasTitle = !string.IsNullOrWhiteSpace(rowItem.Title);
+
+                <div class="swiper-slide">
+                    @* <div class="carousel-item @(isFirstSlide ? "active" : null)"> *@
+                        @if(rowItem != null)
+                        {
+                            <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name">                   
+                        }
+                    @* </div> *@
+                        @if(hasTitle)
+                        {
+                            <div class="text-white gamma">
+                                <p class="fs-1 mb-2 w-75 fw-bold lh-sm">@rowItem.Title</p>
+                                <div class="barra"></div>
+                                <p class="mt-2">@rowItem.Description</p>
+                                <div id="buttonBanner" class="d-flex flex-column mb-3">
+                                    @foreach(var itemLink in rowItem.LinkItems)
+                                    {
+                                        @* <a id="pruebaBtn" class="text-center btn mb-3 w-75">@itemLink.Name</a> *@
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                 </div>
+            }
+       </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination "></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev swiper-button-hidden"></div>
+  <div class="swiper-button-next swiper-button-hidden"></div>
+
+  <!-- If we need scrollbar -->
+  @* swiper-scrollbar *@
+  <div class=""></div>
 </div>
