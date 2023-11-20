@@ -2,10 +2,21 @@ const swiper = new Swiper('.swiper-hero', {
     // Optional parameters
     // direction: 'horizontal',
     loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+    effect: 'fade',
+      fadeEffect: {
+      crossFade: true
+    },
+
   
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      // type: 'bullets',
+      clickable: true,
+      dynamicBullets: true
     },
   
     // Navigation arrows
@@ -17,5 +28,6 @@ const swiper = new Swiper('.swiper-hero', {
     // And if we need scrollbar
     scrollbar: {
       el: '.swiper-scrollbar',
+      draggable: true,
     },
 });
