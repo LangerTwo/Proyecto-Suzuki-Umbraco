@@ -22,7 +22,9 @@
             foreach(var item in navigationItems){
 
               var hasChildLinks = item.ChildLink != null && item.ChildLink.Any();
-              if(hasChildLinks) {
+              var hasModeloItems = item.ModelosItems != null && item.ModelosItems.Any();
+              if(hasChildLinks)
+              {
                 <li class="nav-item dropdown">
                   <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     @item.Title
@@ -35,7 +37,17 @@
                     }
                   </ul>
                 </li>
-              } else {
+              } else if(hasModeloItems)
+              {
+                <li class="nav-item dropdown">
+                    <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      @item.Title
+                   </a>
+                   @* crear foreach que recorra cada item en modelos items *@
+                </li>
+              }
+               else
+              {
                 <li class="nav-item">
                   <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase" href="@homePage.Url()">@item.Title</a>
                 </li>
