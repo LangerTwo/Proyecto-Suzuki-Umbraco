@@ -30,20 +30,54 @@
                     @item.Title
                   </a>
                   <ul id="submenu" class="dropdown-menu border-0 shadow border border-danger border-top border-2" aria-labelledby="@item.Key">
-                    @foreach(var childLink in item.ChildLink) {
+                    @foreach(var childLink in item.ChildLink)
+                    {
                       <li>
                           <a class="dropdown-item text-uppercase fw-bold text-wrap" href="@childLink.Url" target="@childLink.Target">@childLink.Name</a>
                       </li>
                     }
                   </ul>
                 </li>
-              } else if(hasModeloItems)
+              }
+              else if(hasModeloItems)
               {
-                <li class="nav-item dropdown">
+                <li id="modelos" class="nav-item dropdown">
                     <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       @item.Title
                    </a>
-                   @* crear foreach que recorra cada item en modelos items *@
+                   @* crear foreach que recorra cada item en modelos items(Modelos) y cree los elementos que contengan y otro que recorra cada items Car(Modelos Items) *@
+                    <ul id="subModelo" class="dropdown-menu " aria-labelledby="@item.Key">
+                        @foreach(var itemModelo in item.ModelosItems)
+                        {
+                          <li class="container-fluid">
+                            <div>
+                              @itemModelo.ModeloTitle
+                            </div>
+                              <!--var hasItemsCars = itemModelo.ItemsCars != null && itemModelo.ItemsCars.Any();-->
+                                <ul id="infoModelo" class="container">
+                                  @foreach(var datosCars in itemModelo.ItemsCars)
+                                  {
+                                    <li id="dato">
+                                      <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
+                                      <p class="fs-3 fw-bold text-uppercase">@datosCars.TituloModelo</p>
+                                      <p style="">Desde: @datosCars.PrecioModelo*</p>
+                                      <ul class="link-cars">
+                                        @foreach(var modeloLink in datosCars.LinkModelo)
+                                        {
+                                          <li class="me-2"> 
+                                            <a class="fw-semibold" href="@modeloLink.Url">
+                                              @modeloLink.Name
+                                            </a>
+                                          </li>
+                                            
+                                        }
+                                      </ul>
+                                    </li>
+                                  }                          
+                                </ul>
+                          </li>
+                        }
+                    </ul>
                 </li>
               }
                else
