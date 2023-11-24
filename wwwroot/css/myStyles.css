@@ -18,15 +18,41 @@
   max-width: 120px; */
 }
 
+#posventas {
+  position: relative;
+}
+
 /* Navigation Modelos */
 #modelos {
-  position: none;
+  position: static;
 }
+
 #subModelo {
   top: 99%;
+  left: 0;
   position: absolute;
   width: 100%;
-  height: 99vh;
+  height: 600px;
+  display: none;
+  justify-content: center;
+}
+
+#subModelo.zeta.show {
+  display: flex;
+  gap: 1rem;
+}
+
+#subModelo p {
+  margin: 0;
+}
+
+#subModelo p a {
+  text-decoration: none;
+}
+
+#subModelo p a:hover {
+  color: #C60C3E;
+  border-bottom: 4px solid #C60C3E;
 }
 
 #subModelo ul {
@@ -34,8 +60,24 @@
   padding-left: 0;
 }
 
-#infoModelo {
+/* #infoModelo {
   display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+} */
+
+.modeloInfo {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  flex-wrap: wrap;
+}
+
+.showModelo {
+  display: flex;
+  
 }
 
 #infoModelo p {
@@ -44,6 +86,15 @@
 
 #infoModelo li .link-cars {
   display: flex;
+}
+
+.link-cars a::after {
+  content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMC4yNTczOCAxMS4wMDE5Qy0wLjA2NzI3NjcgMTAuNzIyMiAtMC4wODc1MjE4IDEwLjI0OTggMC4yMTIxNjEgOS45NDY4M0w0LjUxMTI3IDUuNTk5OTVMMC4yMTIxNjEgMS4yNTMwN0MtMC4wODc1MjIyIDAuOTUwMDU2IC0wLjA2NzI3NzEgMC40Nzc2NzEgMC4yNTczNzkgMC4xOTc5NjhDMC41ODIwMzYgLTAuMDgxNzM2NiAxLjA4ODE2IC0wLjA2Mjg0MTUgMS4zODc4NSAwLjI0MDE3MUw2LjE4Nzg0IDUuMDkzNUM2LjQ3MDcyIDUuMzc5NTIgNi40NzA3MiA1LjgyMDM4IDYuMTg3ODQgNi4xMDY0TDEuMzg3ODUgMTAuOTU5N0MxLjA4ODE2IDExLjI2MjcgMC41ODIwMzYgMTEuMjgxNiAwLjI1NzM4IDExLjAwMTlaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K);
+  position: relative;
+  top: 0.25rem;
+  margin-left: .6rem;
+  color: #003399;
+  transition: margin .5s ease-in-out;
 }
 
 #dato p:nth-child(3) {
