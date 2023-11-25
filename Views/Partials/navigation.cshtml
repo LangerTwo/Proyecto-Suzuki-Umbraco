@@ -57,38 +57,40 @@
                 @* crear foreach que recorra cada item en modelos items(Modelos) y cree los elementos que contengan y otro que
           recorra cada items Car(Modelos Items) *@
                 <ul id="subModelo" class="dropdown-menu show zeta" aria-labelledby="@item.Key">
-                 @if(validarTodos){
-                    <li>
-                      <p class="text-uppercase fw-bold mb-3">
-                        <a href="" class="btn-link">Todos</a>
-                      </p>
-                      <div id="infoModelo" class="col-md-12 container modeloInfo" >
-                    @foreach (var itemModelo in item.ModelosItems)
-                    {
-                        @foreach (var datosCars in itemModelo.ItemsCars)
-                        {
-                          <div id="dato" class="col-sm-12 col-md-3 col-xxl-2">
-                            <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
-                            <p class="fs-5 fw-bold text-uppercase">@datosCars.TituloModelo</p>
-                            <p style="">Desde: @datosCars.PrecioModelo*</p>
-                            <ul class="link-cars d-flex justify-content-around">
-                              @foreach (var modeloLink in datosCars.LinkModelo)
-                              {
-                                <li class="me-2">
-                                  <a class="fw-semibold" href="@modeloLink.Url">
-                                    @modeloLink.Name
-                                  </a>
-                                </li>
-                              }
-                            </ul>
-                          </div>
-                        }
-                    }
-                      </div>
-                    </li>
-                 }
                   @{
                     var itemIndex = 0;
+                    @if(validarTodos){
+                      var isFirstList = itemIndex == 0;
+                        <li>
+                          <p class="text-uppercase fw-bold mb-3">
+                            <a href="" class="btn-link">Todos</a>
+                          </p>
+                          <div id="infoModelo" class="col-md-12 container modeloInfo @(isFirstList ? "showModelo" : null)">
+                        @foreach (var itemModelo in item.ModelosItems)
+                        {
+                            @foreach (var datosCars in itemModelo.ItemsCars)
+                            {
+                              <div id="dato" class="col-sm-12 col-md-3 col-xxl-2">
+                                <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
+                                <p class="fs-5 fw-bold text-uppercase">@datosCars.TituloModelo</p>
+                                <p style="">Desde: @datosCars.PrecioModelo*</p>
+                                <ul class="link-cars d-flex justify-content-around">
+                                  @foreach (var modeloLink in datosCars.LinkModelo)
+                                  {
+                                    <li class="me-2">
+                                      <a class="fw-semibold" href="@modeloLink.Url">
+                                        @modeloLink.Name
+                                      </a>
+                                    </li>
+                                  }
+                                </ul>
+                              </div>
+                            }
+                        }
+                          </div>
+                        </li>
+                      itemIndex++;
+                    }
                     @foreach (var itemModelo in item.ModelosItems)
                     {
                       var isFirstList = itemIndex == 0;
