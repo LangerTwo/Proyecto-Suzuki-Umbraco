@@ -1,8 +1,8 @@
 ﻿@inherits UmbracoViewPage
 
 @{
-    var homePage = Umbraco.AssignedContentItem.AncestorOrSelf<HomePage>();
-    var navigationItems = homePage.MainNavigation;
+  var homePage = Umbraco.AssignedContentItem.AncestorOrSelf<HomePage>();
+  var navigationItems = homePage.MainNavigation;
 }
 <!-- Navigation-->
 @* sticky-top *@
@@ -12,91 +12,134 @@
       <a class="navbar-brand" href="#"><img src="@homePage.ImageLogo.Url()" alt="@homePage.ImageLogo.Name"></a>
     </div>
 
-      <button class="navbar-toggler col-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler col-1" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse justify-content-end col-6" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 me-lg-0 mb-lg-0">
-        @if(navigationItems != null && navigationItems.Any()){
-            foreach(var item in navigationItems){
+        @if (navigationItems != null && navigationItems.Any())
+        {
+          foreach (var item in navigationItems)
+          {
 
-              var hasChildLinks = item.ChildLink != null && item.ChildLink.Any();
-              var hasModeloItems = item.ModelosItems != null && item.ModelosItems.Any();
-              if(hasChildLinks)
-              {
-                <li id="posventas" class="nav-item dropdown">
-                  <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    @item.Title
-                  </a>
-                  <ul id="submenu" class="dropdown-menu border-0 shadow border border-danger border-top border-2" aria-labelledby="@item.Key">
-                    @foreach(var childLink in item.ChildLink)
-                    {
-                      <li>
-                          <a class="dropdown-item text-uppercase fw-bold text-wrap" href="@childLink.Url" target="@childLink.Target">@childLink.Name</a>
-                      </li>
-                    }
-                  </ul>
-                </li>
-              }
-              else if(hasModeloItems)
-              {
-                <li id="modelos" class="nav-item dropdown">
-                    <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative" href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      @item.Title
-                   </a>
-                   @* crear foreach que recorra cada item en modelos items(Modelos) y cree los elementos que contengan y otro que recorra cada items Car(Modelos Items) *@
-                    <ul id="subModelo" class="dropdown-menu show zeta" aria-labelledby="@item.Key">
-                      @{
-                        var itemIndex = 0;
-                        @foreach(var itemModelo in item.ModelosItems)
-                        {
-
-                        var isFirstList = itemIndex == 0;
-                          <li>
-                            <p class="text-uppercase fw-bold mb-3">
-                              <a href="" class="btn-link">@itemModelo.ModeloTitle</a>                          
-                            </p>
-                              <div id="infoModelo" class="col-md-12 container modeloInfo @(isFirstList ? "showModelo" : null)">
-                                @foreach(var datosCars in itemModelo.ItemsCars)
-                                {
-                                  <div id="dato" class="col-sm-12 col-md-3 col-xxl-2">
-                                    <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
-                                    <p class="fs-5 fw-bold text-uppercase">@datosCars.TituloModelo</p>
-                                    <p style="">Desde: @datosCars.PrecioModelo*</p>
-                                    <ul class="link-cars d-flex justify-content-around">
-                                      @foreach(var modeloLink in datosCars.LinkModelo)
-                                      {
-                                        <li class="me-2"> 
-                                          <a class="fw-semibold" href="@modeloLink.Url">
-                                            @modeloLink.Name
-                                          </a>
-                                        </li> 
-                                      }
-                                    </ul>
-                                  </div>
-                                }                          
-                              </div>
-                          </li>
-                        itemIndex++;
-                        }
-                      }
-                    </ul>
-                </li>
-              }
-               else
-              {
-                <li class="nav-item">
-                  <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase" href="@homePage.Url()">@item.Title</a>
-                </li>
-              }
+            var hasChildLinks = item.ChildLink != null && item.ChildLink.Any();
+            var hasModeloItems = item.ModelosItems != null && item.ModelosItems.Any();
+            var validarTodos = item.ValidarTodos;
+            if (hasChildLinks)
+            {
+              <li id="posventas" class="nav-item dropdown">
+                <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative"
+                  href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  @item.Title
+                </a>
+                <ul id="submenu" class="dropdown-menu border-0 shadow border border-danger border-top border-2"
+                  aria-labelledby="@item.Key">
+                  @foreach (var childLink in item.ChildLink)
+                  {
+                    <li>
+                      <a class="dropdown-item text-uppercase fw-bold text-wrap" href="@childLink.Url"
+                        target="@childLink.Target">@childLink.Name</a>
+                    </li>
+                  }
+                </ul>
+              </li>
             }
+            else if (hasModeloItems)
+            {
+              <li id="modelos" class="nav-item dropdown">
+                <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase position-relative"
+                  href="@homePage.Url()" id="@item.Key" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  @item.Title
+                </a>
+                @* crear foreach que recorra cada item en modelos items(Modelos) y cree los elementos que contengan y otro que
+          recorra cada items Car(Modelos Items) *@
+                <ul id="subModelo" class="dropdown-menu show zeta" aria-labelledby="@item.Key">
+                 @if(validarTodos){
+                    <li>
+                      <p class="text-uppercase fw-bold mb-3">
+                        <a href="" class="btn-link">Todos</a>
+                      </p>
+                      <div id="infoModelo" class="col-md-12 container modeloInfo" >
+                    @foreach (var itemModelo in item.ModelosItems)
+                    {
+                        @foreach (var datosCars in itemModelo.ItemsCars)
+                        {
+                          <div id="dato" class="col-sm-12 col-md-3 col-xxl-2">
+                            <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
+                            <p class="fs-5 fw-bold text-uppercase">@datosCars.TituloModelo</p>
+                            <p style="">Desde: @datosCars.PrecioModelo*</p>
+                            <ul class="link-cars d-flex justify-content-around">
+                              @foreach (var modeloLink in datosCars.LinkModelo)
+                              {
+                                <li class="me-2">
+                                  <a class="fw-semibold" href="@modeloLink.Url">
+                                    @modeloLink.Name
+                                  </a>
+                                </li>
+                              }
+                            </ul>
+                          </div>
+                        }
+                    }
+                      </div>
+                    </li>
+                 }
+                  @{
+                    var itemIndex = 0;
+                    @foreach (var itemModelo in item.ModelosItems)
+                    {
+                      var isFirstList = itemIndex == 0;
+                      <li>
+                        @* pestañas *@
+                        <p class="text-uppercase fw-bold mb-3">
+                          <a href="" class="btn-link">@itemModelo.ModeloTitle</a>
+                        </p>
+                        @* modelos de la pestaña *@
+                        <div id="infoModelo" class="col-md-12 container modeloInfo @(isFirstList ? "showModelo" : null)">
+                          @foreach (var datosCars in itemModelo.ItemsCars)
+                          {
+                            <div id="dato" class="col-sm-12 col-md-3 col-xxl-2">
+                              <img src="@datosCars.ImagenModelo.Url()" alt="@datosCars.ImagenModelo.Name">
+                              <p class="fs-5 fw-bold text-uppercase">@datosCars.TituloModelo</p>
+                              <p style="">Desde: @datosCars.PrecioModelo*</p>
+                              <ul class="link-cars d-flex justify-content-around">
+                                @foreach (var modeloLink in datosCars.LinkModelo)
+                                {
+                                  <li class="me-2">
+                                    <a class="fw-semibold" href="@modeloLink.Url">
+                                      @modeloLink.Name
+                                    </a>
+                                  </li>
+                                }
+                              </ul>
+                            </div>
+                          }
+                        </div>
+                      </li>
+                      itemIndex++;
+                    }
+                  }
+                </ul>
+              </li>
+            }
+            else
+            {
+              <li class="nav-item">
+                <a id="prueba" class="nav-link px-lg-3 py-3 py-lg-4 fw-bold text-uppercase"
+                  href="@homePage.Url()">@item.Title</a>
+              </li>
+            }
+          }
         }
       </ul>
     </div>
 
     <div class="col-1">
-      <a href="#"><img src="@homePage.ImageLupa.Url()" alt="@homePage.ImageLupa.Name" style="width: 100px; heigth: 100px;"></a>
+      <a href="#"><img src="@homePage.ImageLupa.Url()" alt="@homePage.ImageLupa.Name"
+          style="width: 100px; heigth: 100px;"></a>
     </div>
   </div>
 </nav>

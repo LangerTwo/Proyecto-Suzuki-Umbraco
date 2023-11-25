@@ -8,67 +8,6 @@
     var carouselId = "carousel" + row.Key;
 }
 
-@* <div id="@carouselId" class="carousel slide container-fliud mt-2" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    @if(settings?.ShowIndicators ?? false){
-        
-        var itemCount = row.CarouselItems.Count;
-
-        @for(var slideIndex = 0; slideIndex < itemCount; slideIndex++){
-            var isFirst = slideIndex == 0;
-            <button type="button" data-bs-target="#@carouselId" data-bs-slide-to="@slideIndex" class="@(isFirst ? "active" : null)" aria-current="@isFirst" aria-label="Slide @(slideIndex + 1)"></button>
-
-        }
-    }
-  </div>
-
-
-  <div class="carousel-inner position-relative">
-    @{
-        var itemIndex = 0;
-
-        @foreach(var item in row.CarouselItems){
-            var rowItem = (CarouselItem)item.Content;
-            var rowSettings = (CarouselItemSettings)item.Settings;
-            if(rowSettings.Hide) continue;
-
-            var isFirstSlide = itemIndex == 0;
-            var hasTitle = !string.IsNullOrWhiteSpace(rowItem.Title);
-
-            <div class="carousel-item @(isFirstSlide ? "active" : null)">
-                @if(rowItem != null){
-                    <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name"  style="height: 650px;">                   
-                }
-            </div>
-             @if(hasTitle) {
-                    <div class="text-white gamma">
-                        <p class="fs-1 mb-2 w-75 fw-bold lh-sm">@rowItem.Title</p>
-                        <div class="barra"></div>
-                        <p class="mt-2">@rowItem.Description</p>
-                        <div id="buttonBanner" class="d-flex flex-column mb-3">
-                            @foreach(var itemLink in rowItem.LinkItems){
-                                <a id="pruebaBtn" class="text-center btn mb-3 w-75">@itemLink.Name</a>
-                            }
-                        </div>
-                    </div>
-                }
-            itemIndex++;
-        }
-    }
-  </div>
-
-    @if(settings?.ShowNavigationsArrows ?? false){
-        <button class="carousel-control-prev" type="button" data-bs-target="#@carouselId" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    }
-</div> *@
-
 <!-- Slider main container -->
 <div class="swiper swiper-hero">
   <!-- Additional required wrapper -->
