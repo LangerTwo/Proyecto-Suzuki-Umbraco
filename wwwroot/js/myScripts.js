@@ -1,8 +1,8 @@
 const btnClick = document.querySelectorAll('#subModelo .btn-link');
 const showModeloList = document.querySelectorAll('#infoModelo');
-const modelos = document.querySelector('nav #modelos');
-const subModelo = document.querySelector('#subModelo');
-console.log(subModelo)
+const showLista = document.querySelectorAll('nav #lista .dropdown');
+const subMenu = document.querySelectorAll('.dropdown-menu');
+console.log(subMenu)
 
 btnClick.forEach((btn, index) => {
     btn.addEventListener('click', (e) => {
@@ -29,10 +29,26 @@ btnClick.forEach((btn, index) => {
     });
 });
 
-modelos.addEventListener('mouseenter', () => {
-    subModelo.classList.add('show');
-});
+showLista.forEach((btn, index) => {
+    btn.addEventListener('mouseenter', () => {
+        const listaShow = subMenu[index]
+        listaShow.classList.add('show');
+        subMenu.forEach( (element, idx) => {
+            if (idx !== index) {
+                element.classList.remove('show');  
+            }
+        })
+    });
+})
 
-subModelo.addEventListener('mouseleave', (e) => {
-    subModelo.classList.remove('show');       
-});
+subMenu.forEach((btn, index) => {
+    btn.addEventListener('mouseleave', () => {
+        const listaShow = subMenu[index]
+        listaShow.classList.remove('show');
+        subMenu.forEach( (element, idx) => {
+            if (idx !== index) {
+                element.classList.remove('show');  
+            }
+        })
+    });
+})

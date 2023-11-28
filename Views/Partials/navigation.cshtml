@@ -19,7 +19,7 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end col-6" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 me-lg-0 mb-lg-0">
+      <ul id="lista" class="navbar-nav me-auto mb-2 me-lg-0 mb-lg-0">
         @if (navigationItems != null && navigationItems.Any())
         {
           foreach (var item in navigationItems)
@@ -61,7 +61,7 @@
                     var itemIndex = 0;
                     @if(validarTodos){
                       var isFirstList = itemIndex == 0;
-                        <li class="lista">
+                        <li>
                           <p class="text-uppercase fw-bold mb-3">
                             <a id="btn-modelo" href="" class="btn-link active">Todos</a>
                           </p>
@@ -94,7 +94,7 @@
                     @foreach (var itemModelo in item.ModelosItems)
                     {
                       var isFirstList = itemIndex == 0;
-                      <li class="lista">
+                      <li>
                         @* pestañas *@
                         <p class="text-uppercase fw-bold mb-3">
                           <a id="btn-modelo" href="" class="btn-link">@itemModelo.ModeloTitle</a>
