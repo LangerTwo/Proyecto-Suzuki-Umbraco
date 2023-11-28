@@ -55,6 +55,11 @@
   border-bottom: 4px solid #C60C3E;
 }
 
+.active{
+  color: #C60C3E;
+  border-bottom: 4px solid #C60C3E;
+}
+
 #subModelo ul {
   list-style: none;
   padding-left: 0;

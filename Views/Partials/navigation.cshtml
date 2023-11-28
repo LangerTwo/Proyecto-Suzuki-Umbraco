@@ -61,9 +61,9 @@
                     var itemIndex = 0;
                     @if(validarTodos){
                       var isFirstList = itemIndex == 0;
-                        <li>
+                        <li class="lista">
                           <p class="text-uppercase fw-bold mb-3">
-                            <a href="" class="btn-link">Todos</a>
+                            <a id="btn-modelo" href="" class="btn-link active">Todos</a>
                           </p>
                           <div id="infoModelo" class="col-md-12 container modeloInfo @(isFirstList ? "showModelo" : null)">
                         @foreach (var itemModelo in item.ModelosItems)
@@ -94,10 +94,10 @@
                     @foreach (var itemModelo in item.ModelosItems)
                     {
                       var isFirstList = itemIndex == 0;
-                      <li>
+                      <li class="lista">
                         @* pestañas *@
                         <p class="text-uppercase fw-bold mb-3">
-                          <a href="" class="btn-link">@itemModelo.ModeloTitle</a>
+                          <a id="btn-modelo" href="" class="btn-link">@itemModelo.ModeloTitle</a>
                         </p>
                         @* modelos de la pestaña *@
                         <div id="infoModelo" class="col-md-12 container modeloInfo @(isFirstList ? "showModelo" : null)">
