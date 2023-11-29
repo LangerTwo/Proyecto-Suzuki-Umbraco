@@ -1,8 +1,9 @@
 const btnClick = document.querySelectorAll('#subModelo .btn-link');
 const showModeloList = document.querySelectorAll('#infoModelo');
-const showLista = document.querySelectorAll('nav #lista .dropdown');
+const showLista = document.querySelectorAll('nav #lista .dropdown #prueba');
 const subMenu = document.querySelectorAll('.dropdown-menu');
-console.log(subMenu)
+
+console.log(showLista)
 
 document.addEventListener('DOMContentLoaded', () => {
     showModel();
@@ -29,12 +30,12 @@ function showModel() {
      
              const btnStyle = btnClick[index]
              btnStyle.classList.add('active')
-             btnClick.forEach( (element, idx) => {
-                 if(idx !== index){
-                     e.preventDefault();
-                     element.classList.remove('active');
-                 }
-             })
+                btnClick.forEach( (element, idx) => {
+                    if(idx !== index){
+                        e.preventDefault();
+                        element.classList.remove('active');
+                    }
+                })
          });
      });
 }
@@ -49,39 +50,19 @@ function listaShow() {
             subMenu.forEach( (element, idx) => {
                 if (idx !== index) {
                     e.preventDefault();
-                    element.classList.remove('show');  
+                    element.classList.remove('show');
                 }
             })
-        });
-    })
-    
-    showLista.forEach((btn, index) => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
 
-            const listaShow = subMenu[index]
-            listaShow.classList.add('show');
-            subMenu.forEach( (element, idx) => {
-                if (idx !== index || idx === index) {
+            const btnStyle = showLista[index]
+            btnStyle.classList.add('prueba2');
+            showLista.forEach( (element, idx) => {
+                if(idx !== index){
                     e.preventDefault();
-                    element.classList.remove('show');  
+                    element.classList.remove('prueba2');
                 }
             })
-        });
-    })
 
-    showLista.forEach((btn, index) => {
-        btn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-
-            const listaShow = subMenu[index]
-            listaShow.classList.add('show');
-            subMenu.forEach( (element, idx) => {
-                if (idx !== index || idx === index) {
-                    e.preventDefault();
-                    element.classList.remove('show');  
-                }
-            })
         });
     })
 }
@@ -93,12 +74,16 @@ function closeShow() {
 
             const listaShow = subMenu[index]
             listaShow.classList.remove('show');
+
             subMenu.forEach( (element, idx) => {
                 if (idx !== index) {
                     e.preventDefault();
                     element.classList.remove('show');  
                 }
             })
+
+            const btnStyle = showLista[index]
+            btnStyle.classList.remove('prueba2');
         });
     })
 }

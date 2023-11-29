@@ -1,10 +1,11 @@
 :root {
   --icon-arrow: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMC4yNTczOCAxMS4wMDE5Qy0wLjA2NzI3NjcgMTAuNzIyMiAtMC4wODc1MjE4IDEwLjI0OTggMC4yMTIxNjEgOS45NDY4M0w0LjUxMTI3IDUuNTk5OTVMMC4yMTIxNjEgMS4yNTMwN0MtMC4wODc1MjIyIDAuOTUwMDU2IC0wLjA2NzI3NzEgMC40Nzc2NzEgMC4yNTczNzkgMC4xOTc5NjhDMC41ODIwMzYgLTAuMDgxNzM2NiAxLjA4ODE2IC0wLjA2Mjg0MTUgMS4zODc4NSAwLjI0MDE3MUw2LjE4Nzg0IDUuMDkzNUM2LjQ3MDcyIDUuMzc5NTIgNi40NzA3MiA1LjgyMDM4IDYuMTg3ODQgNi4xMDY0TDEuMzg3ODUgMTAuOTU5N0MxLjA4ODE2IDExLjI2MjcgMC41ODIwMzYgMTEuMjgxNiAwLjI1NzM4IDExLjAwMTlaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K);
   --icon-arrow2: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMC4yNDc1MjEgMC4zMjE3MjVDMC41OTcxNTEgLTAuMDg0MDk1OCAxLjE4NzYzIC0wLjEwOTQwMiAxLjU2NjQgMC4yNjUyMDFMNyA1LjYzOTA5TDEyLjQzMzYgMC4yNjUyMDFDMTIuODEyNCAtMC4xMDk0MDIgMTMuNDAyOCAtMC4wODQwOTU4IDEzLjc1MjUgMC4zMjE3MjVDMTQuMTAyMSAwLjcyNzU0NSAxNC4wNzg1IDEuMzYwMiAxMy42OTk3IDEuNzM0ODFMNy42MzMwNiA3LjczNDhDNy4yNzU1NCA4LjA4ODQgNi43MjQ0NiA4LjA4ODQgNi4zNjY5NCA3LjczNDhMMC4zMDAyNzYgMS43MzQ4MUMtMC4wNzg0ODk0IDEuMzYwMiAtMC4xMDIxMDkgMC43Mjc1NDUgMC4yNDc1MjEgMC4zMjE3MjVaIiBmaWxsPSIjNDE0MTQxIi8+Cjwvc3ZnPgo=);
+  --icon-arrow3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNDc1MiA3LjMyMTcyQzMuNTk3MTUgNi45MTU5IDQuMTg3NjMgNi44OTA2IDQuNTY2NCA3LjI2NTJMMTAgMTIuNjM5MUwxNS40MzM2IDcuMjY1MkMxNS44MTI0IDYuODkwNiAxNi40MDI4IDYuOTE1OSAxNi43NTI1IDcuMzIxNzJDMTcuMTAyMSA3LjcyNzU1IDE3LjA3ODUgOC4zNjAyIDE2LjY5OTcgOC43MzQ4MUwxMC42MzMxIDE0LjczNDhDMTAuMjc1NSAxNS4wODg0IDkuNzI0NDYgMTUuMDg4NCA5LjM2Njk0IDE0LjczNDhMMy4zMDAyOCA4LjczNDgxQzIuOTIxNTEgOC4zNjAyIDIuODk3ODkgNy43Mjc1NSAzLjI0NzUyIDcuMzIxNzJaIiBmaWxsPSIjREUwMDM5Ii8+DQo8L3N2Zz4=)
 }
 
 #prueba:hover{
-  color: #C60C3E;;
+  color: #C60C3E;
 }
 
 .position-link{
@@ -40,11 +41,13 @@
   height: 100vh;
   display: none;
   justify-content: center;
+
 }
 
 #subModelo.zeta.show {
   display: flex;
   gap: 1rem;
+  transition: .5s all ease;
 }
 
 #subModelo p {
@@ -69,13 +72,6 @@
   list-style: none;
   padding-left: 0;
 }
-
-/* #infoModelo {
-  display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-} */
 
 .modeloInfo {
   display: none;
@@ -107,20 +103,30 @@
   transition: margin .5s ease-in-out;
 }
 
-
-#posventas,
-#modelos {
+.dropdown a{
   display: flex;
-  align-items: center;
 }
 
-#prueba::after {
+.dropdown #prueba::after {
   content: var(--icon-arrow2);
   position: relative;
-  top: 0.25rem;
+  top: 0;
   margin-left: .6rem;
   color: #003399;
-  transition: margin .5s ease-in-out;
+  transition: .5s all ease;
+}
+
+.prueba2 {
+  color: #C60C3E !important;
+}
+
+.dropdown .prueba2::after {
+  transform: rotate(-180deg);
+  content: var(--icon-arrow3) !important;
+}
+
+#lista li a#prueba {
+  padding: 8px 8px 16px !important;
 }
 
 #dato p:nth-child(3) {
