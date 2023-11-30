@@ -31,3 +31,11 @@ const swiper = new Swiper('.swiper-hero', {
       draggable: true,
     },
 });
+
+const swiperTwo = new Swiper('.swiper-hero-two', {
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});

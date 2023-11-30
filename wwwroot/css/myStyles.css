@@ -190,8 +190,13 @@
 
 /* Cards */
 .omega{
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+  /* overflow-x: scroll; */
+  /* scroll-behavior: smooth; */
+}
+
+.omega .cardStyle {
+  width: 350px !important;
+  height: 450px !important;
 }
 
 #prev {
@@ -199,6 +204,16 @@
   transform: rotate(90deg);
   height: 20px;
   cursor: pointer;
+}
+
+.arrow-container {
+  width: 6rem;
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: calc(50% - 3rem);
+  bottom: -16px;
 }
 
 #next {
