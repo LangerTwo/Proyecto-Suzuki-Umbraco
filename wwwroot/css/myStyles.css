@@ -141,7 +141,7 @@
 /* Imagens */
 .beta:hover{
   transform: scale(1.3);
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1;
 }
 
@@ -188,9 +188,24 @@
   height: 500px;
 }
 
+/* Cards */
 .omega{
   overflow-x: scroll;
   scroll-behavior: smooth;
+}
+
+#prev {
+  content: var(--icon-arrow2);
+  transform: rotate(90deg);
+  height: 20px;
+  cursor: pointer;
+}
+
+#next {
+  content: var(--icon-arrow3);
+  transform: rotate(-90deg);
+  height: 46px;
+  cursor: pointer;
 }
 
 /* Footer */

@@ -14,7 +14,8 @@
     </div>
 
     <div class="d-flex omega">
-        @foreach(var card in row.ItemsCard){
+        @foreach(var card in row.ItemsCard)
+        {
             var rowItem = (ImageLinkItem)card.Content;
             var rowSettings = (ImageLinkItemSettings)card.Settings;
             if(rowSettings.Hide) continue;
@@ -26,11 +27,14 @@
                 <div class="card-body">
                     <p class="card-text fs-4 fw-bold text-wrap">@rowItem.Description</p>
                     @if(rowItem.Link != null){
-                     <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-uppercase text-danger">@rowItem.Link.Name</a>
-                        
+                     <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-uppercase text-danger">@rowItem.Link.Name</a>                  
                     }
                 </div>
             </div>
         }
+    </div>
+    <div id="preuba3" class="d-flex justify-content-center align-items-center pt-3">
+        <div id="prev"></div>
+        <div id="next"></div>
     </div>
 </div>
