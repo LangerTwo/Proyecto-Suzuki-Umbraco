@@ -3,7 +3,11 @@ const showModeloList = document.querySelectorAll('#infoModelo');
 const showLista = document.querySelectorAll('nav #lista .dropdown #prueba');
 const subMenu = document.querySelectorAll('.dropdown-menu');
 
-console.log(showLista)
+const btnScroll = document.querySelector('#btnScroll')
+const divCard = document.querySelector('#divCard')
+
+
+// console.log(showLista)
 
 document.addEventListener('DOMContentLoaded', () => {
     showModel();
@@ -87,3 +91,7 @@ function closeShow() {
         });
     })
 }
+
+btnScroll.addEventListener('click', (e) => {
+    console.log(e.target)
+})

@@ -6,59 +6,61 @@
   if(settings?.Hide ?? false) {return;}
   if(row.ItemsCard == null || !row.ItemsCard.Any()) return;
 }
-<div style="position: relative; height: 600px;">
-    <div class="container-fluid mt-5 swiper swiper-hero-two">
-        <div class="text-center">
-            <h2 class="fs-1 mb-0">@row.Title</h2>
-            <p class="mt-0 fs-2">@row.Description</p>
-        </div>
+<section style="height: 600px;">
+    <div style="position: relative; height: 560px;">
+        <div class="mt-5 swiper swiper-hero-two">
+            <div class="text-center">
+                <h2 class="fs-1 mb-0">@row.Title</h2>
+                <p class="mt-0 fs-2">@row.Description</p>
+            </div>
 
-        @* <div class="d-flex omega">
-            @foreach(var card in row.ItemsCard)
-            {
-                var rowItem = (ImageLinkItem)card.Content;
-                var rowSettings = (ImageLinkItemSettings)card.Settings;
-                if(rowSettings.Hide) continue;
+            @* <div class="d-flex omega">
+                @foreach(var card in row.ItemsCard)
+                {
+                    var rowItem = (ImageLinkItem)card.Content;
+                    var rowSettings = (ImageLinkItemSettings)card.Settings;
+                    if(rowSettings.Hide) continue;
 
-                <div class="card me-3 col-2 p-0" style="width: 350px;">
-                    @if(rowItem.Image != null){
-                        <img src="@rowItem.Image.Url()" class="card-img-top align-self-center" alt="@rowItem.Image.Name">
-                    }
-                    <div class="card-body">
-                        <p class="card-text fs-4 fw-bold text-wrap">@rowItem.Description</p>
-                        @if(rowItem.Link != null){
-                        <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-uppercase text-danger">@rowItem.Link.Name</a>                  
+                    <div class="card me-3 col-2 p-0" style="width: 350px;">
+                        @if(rowItem.Image != null){
+                            <img src="@rowItem.Image.Url()" class="card-img-top align-self-center" alt="@rowItem.Image.Name">
                         }
-                    </div>
-                </div>
-            }
-        </div> *@
-
-        <div class="swiper-wrapper omega">
-            @foreach(var card in row.ItemsCard)
-            {
-                var rowItem = (ImageLinkItem)card.Content;
-                var rowSettings = (ImageLinkItemSettings)card.Settings;
-                if(rowSettings.Hide) continue;
-                <!-- Slides -->
-                <div class="swiper-slide me-3 col-2 p-0 border cardStyle" style="width: 350px; height: 450px;">
-                    @if(rowItem.Image != null){
-                        <img src="@rowItem.Image.Url()" class="card-img-top align-self-center" alt="@rowItem.Image.Name">
-                    }
-                    <div class="card-body">
-                        <p class="card-text fs-4 fw-bold text-wrap">@rowItem.Description</p>
-                        @if(rowItem.Link != null){
+                        <div class="card-body">
+                            <p class="card-text fs-4 fw-bold text-wrap">@rowItem.Description</p>
+                            @if(rowItem.Link != null){
                             <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-uppercase text-danger">@rowItem.Link.Name</a>                  
-                        }
+                            }
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div> *@
+
+            <div class="swiper-wrapper omega">
+                @foreach(var card in row.ItemsCard)
+                {
+                    var rowItem = (ImageLinkItem)card.Content;
+                    var rowSettings = (ImageLinkItemSettings)card.Settings;
+                    if(rowSettings.Hide) continue;
+                    <!-- Slides -->
+                    <div class="swiper-slide p-0 border cardStyle" id="divCard" style="height: 400px;">
+                        @if(rowItem.Image != null){
+                            <img src="@rowItem.Image.Url()" class="card-img-top align-self-center" alt="@rowItem.Image.Name">
+                        }
+                        <div class="card-body">
+                            <p class="card-text fs-4 fw-bold text-wrap">@rowItem.Description</p>
+                            @if(rowItem.Link != null){
+                                <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-4 text-uppercase text-danger">@rowItem.Link.Name</a>                  
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>   
+        <div id="preuba3" class="arrow-container">
+        <div class="swiper-button-prev" ></div>
+            <div class="swiper-button-next" id="btnScroll"></div>
+            @* <div id="prev"  d-flex justify-content-center align-items-center pt-3></div>
+            <div id="next"></div> *@
         </div>
-    </div>   
-    <div id="preuba3" class="arrow-container">
-      <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        @* <div id="prev"  d-flex justify-content-center align-items-center pt-3></div>
-        <div id="next"></div> *@
     </div>
-</div>
+</section>

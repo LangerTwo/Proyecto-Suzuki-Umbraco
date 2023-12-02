@@ -1,7 +1,8 @@
 :root {
   --icon-arrow: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMC4yNTczOCAxMS4wMDE5Qy0wLjA2NzI3NjcgMTAuNzIyMiAtMC4wODc1MjE4IDEwLjI0OTggMC4yMTIxNjEgOS45NDY4M0w0LjUxMTI3IDUuNTk5OTVMMC4yMTIxNjEgMS4yNTMwN0MtMC4wODc1MjIyIDAuOTUwMDU2IC0wLjA2NzI3NzEgMC40Nzc2NzEgMC4yNTczNzkgMC4xOTc5NjhDMC41ODIwMzYgLTAuMDgxNzM2NiAxLjA4ODE2IC0wLjA2Mjg0MTUgMS4zODc4NSAwLjI0MDE3MUw2LjE4Nzg0IDUuMDkzNUM2LjQ3MDcyIDUuMzc5NTIgNi40NzA3MiA1LjgyMDM4IDYuMTg3ODQgNi4xMDY0TDEuMzg3ODUgMTAuOTU5N0MxLjA4ODE2IDExLjI2MjcgMC41ODIwMzYgMTEuMjgxNiAwLjI1NzM4IDExLjAwMTlaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K);
   --icon-arrow2: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMC4yNDc1MjEgMC4zMjE3MjVDMC41OTcxNTEgLTAuMDg0MDk1OCAxLjE4NzYzIC0wLjEwOTQwMiAxLjU2NjQgMC4yNjUyMDFMNyA1LjYzOTA5TDEyLjQzMzYgMC4yNjUyMDFDMTIuODEyNCAtMC4xMDk0MDIgMTMuNDAyOCAtMC4wODQwOTU4IDEzLjc1MjUgMC4zMjE3MjVDMTQuMTAyMSAwLjcyNzU0NSAxNC4wNzg1IDEuMzYwMiAxMy42OTk3IDEuNzM0ODFMNy42MzMwNiA3LjczNDhDNy4yNzU1NCA4LjA4ODQgNi43MjQ0NiA4LjA4ODQgNi4zNjY5NCA3LjczNDhMMC4zMDAyNzYgMS43MzQ4MUMtMC4wNzg0ODk0IDEuMzYwMiAtMC4xMDIxMDkgMC43Mjc1NDUgMC4yNDc1MjEgMC4zMjE3MjVaIiBmaWxsPSIjNDE0MTQxIi8+Cjwvc3ZnPgo=);
-  --icon-arrow3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNDc1MiA3LjMyMTcyQzMuNTk3MTUgNi45MTU5IDQuMTg3NjMgNi44OTA2IDQuNTY2NCA3LjI2NTJMMTAgMTIuNjM5MUwxNS40MzM2IDcuMjY1MkMxNS44MTI0IDYuODkwNiAxNi40MDI4IDYuOTE1OSAxNi43NTI1IDcuMzIxNzJDMTcuMTAyMSA3LjcyNzU1IDE3LjA3ODUgOC4zNjAyIDE2LjY5OTcgOC43MzQ4MUwxMC42MzMxIDE0LjczNDhDMTAuMjc1NSAxNS4wODg0IDkuNzI0NDYgMTUuMDg4NCA5LjM2Njk0IDE0LjczNDhMMy4zMDAyOCA4LjczNDgxQzIuOTIxNTEgOC4zNjAyIDIuODk3ODkgNy43Mjc1NSAzLjI0NzUyIDcuMzIxNzJaIiBmaWxsPSIjREUwMDM5Ii8+DQo8L3N2Zz4=)
+  --icon-arrow3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNDc1MiA3LjMyMTcyQzMuNTk3MTUgNi45MTU5IDQuMTg3NjMgNi44OTA2IDQuNTY2NCA3LjI2NTJMMTAgMTIuNjM5MUwxNS40MzM2IDcuMjY1MkMxNS44MTI0IDYuODkwNiAxNi40MDI4IDYuOTE1OSAxNi43NTI1IDcuMzIxNzJDMTcuMTAyMSA3LjcyNzU1IDE3LjA3ODUgOC4zNjAyIDE2LjY5OTcgOC43MzQ4MUwxMC42MzMxIDE0LjczNDhDMTAuMjc1NSAxNS4wODg0IDkuNzI0NDYgMTUuMDg4NCA5LjM2Njk0IDE0LjczNDhMMy4zMDAyOCA4LjczNDgxQzIuOTIxNTEgOC4zNjAyIDIuODk3ODkgNy43Mjc1NSAzLjI0NzUyIDcuMzIxNzJaIiBmaWxsPSIjREUwMDM5Ii8+DQo8L3N2Zz4=);
+  /* --shadow: 0.35px 4px 8px 4px rgba(0, 0, 0, 0.15); */
 }
 
 #prueba:hover{
@@ -139,16 +140,28 @@
 }
 
 /* Imagens */
-.beta:hover{
-  transform: scale(1.3);
-  /* overflow: hidden; */
-  z-index: 1;
+.beta-prueba {
+  display: flex;
+  justify-content: center;
 }
 
 .beta img{
   transition: 0.4s;
-  width: 95%;
-  filter:brightness(74%);
+  width: 100%;
+  filter: brightness(74%);
+  object-fit: cover;
+}
+
+.beta img:hover{
+  transform: scale(1.3);
+  z-index: 1;
+}
+
+.prueba-beta {
+  overflow: hidden;
+  width: 100%;
+  margin: 0.35rem 0.35rem;
+  position: relative;
 }
 
 .gamma{
@@ -190,20 +203,25 @@
 
 /* Cards */
 .omega{
-  /* overflow-x: scroll; */
-  /* scroll-behavior: smooth; */
+ 
 }
 
 .omega .cardStyle {
-  width: 350px !important;
-  height: 450px !important;
+  /* width: 350px !important; */
+  /* height: 450px !important;  */
+  box-shadow: 0.35px 4px 8px 4px rgba(0, 0, 0, 0.15);
 }
 
-#prev {
-  content: var(--icon-arrow2);
-  transform: rotate(90deg);
-  height: 20px;
-  cursor: pointer;
+div.card-body {
+  padding: 0.75rem;
+  /* margin-bottom: 2rem; */
+}
+
+.card-body p {
+  margin: 1rem 0;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .arrow-container {
@@ -214,13 +232,6 @@
   justify-content: center;
   left: calc(50% - 3rem);
   bottom: -16px;
-}
-
-#next {
-  content: var(--icon-arrow3);
-  transform: rotate(-90deg);
-  height: 46px;
-  cursor: pointer;
 }
 
 /* Footer */

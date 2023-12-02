@@ -9,17 +9,17 @@
 
 <div class="container-fluid">
     <h2 class="text-center text-uppercase">@row.Title</h2>
-    <div class="d-flex pt-5">
+    <div class="row" style="overflow: hidden;">
       @foreach(var item in row.ImageItems){
         var rowItem = (ImageLinkItem)item.Content;
 
-        <div class="col-4 position-relative beta">
-          @* @if(item.image != null){ *@
-            <img src="@rowItem.Image.Url()" alt="@rowItem.Image.Name"> 
-            <div class="position-link">
-               <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-white text-uppercase">@rowItem.Link.Name</a>
+        <div class="col-4 position-relative beta beta-prueba">
+            <div class="prueba-beta">  
+              <img src="@rowItem.Image.Url()" alt="@rowItem.Image.Name"> 
+              <div class="position-link">
+                <a href="@rowItem.Link.Url" target="@rowItem.Link.Target" class="text-decoration-underline fs-3 text-white text-uppercase">@rowItem.Link.Name</a>
+              </div>
             </div>
-          @* } *@
         </div> 
       }
     </div>

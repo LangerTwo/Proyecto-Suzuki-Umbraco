@@ -26,7 +26,7 @@
                     @* <div class="carousel-item @(isFirstSlide ? "active" : null)"> *@
                         @if(rowItem != null)
                         {
-                            <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name">                   
+                            <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name" style="height: 583px; object-fit: fill;">                   
                         }
                     @* </div> *@
                         @if(hasTitle)
@@ -48,13 +48,16 @@
             }
        </div>
   <!-- If we need pagination -->
-  <div class="swiper-pagination "></div>
+  <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons -->
   <div class="swiper-button-prev swiper-button-hidden"></div>
   <div class="swiper-button-next swiper-button-hidden"></div>
 
-  <!-- If we need scrollbar -->
-  @* swiper-scrollbar *@
-  <div class=""></div>
+    <div class="autoplay-progress">
+        <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span>3</span>
+    </div>
 </div>
